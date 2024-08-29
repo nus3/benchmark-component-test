@@ -1,0 +1,12 @@
+{
+  "name": "benchmark-component-test",
+  "version": "0.0.1",
+  "scripts": {
+    "fix": "biome check --apply .",
+    "fix:unsafe": "biome check --apply-unsafe .",
+    "lint": "biome lint ."
+  },
+  "author": "nus3",
+  "license": "ISC",
+  "private": true
+}
