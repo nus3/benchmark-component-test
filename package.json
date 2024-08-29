@@ -8,5 +8,9 @@
   },
   "author": "nus3",
   "license": "ISC",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "tinybench": "2.9.0"
+  }
 }

@@ -11,6 +11,9 @@ importers:
       '@biomejs/biome':
         specifier: 1.8.3
         version: 1.8.3
+      tinybench:
+        specifier: 2.9.0
+        version: 2.9.0
 
 packages:
 
@@ -67,6 +70,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  tinybench@2.9.0:
+    resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
+
 snapshots:
 
   '@biomejs/biome@1.8.3':
@@ -103,3 +109,5 @@ snapshots:
 
   '@biomejs/cli-win32-x64@1.8.3':
     optional: true
+
+  tinybench@2.9.0: {}
