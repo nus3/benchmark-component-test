@@ -1,16 +1,22 @@
 {
   "name": "benchmark-component-test",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "fix": "biome check --apply .",
     "fix:unsafe": "biome check --apply-unsafe .",
-    "lint": "biome lint ."
+    "lint": "biome lint .",
+    "benchmark": "tsx ./scripts/benchmark.ts",
+    "type-check": "tsc --noEmit"
   },
   "author": "nus3",
   "license": "ISC",
   "private": true,
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "tinybench": "2.9.0"
+    "@types/node": "22.5.1",
+    "tinybench": "2.9.0",
+    "tsx": "4.19.0",
+    "typescript": "5.5.4"
   }
 }
