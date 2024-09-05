@@ -10,7 +10,7 @@ const bench = new Bench();
 // TODO: なんか無限にtimestampが生成されるかも。バグってそう
 // vitestでテスト実行したら終わるようなオプションが確かあったはず
 bench.add("vitest", async () => {
-  await exec("pnpm --filter react-app run test");
+  await exec("pnpm --filter react-app run test-ci");
 });
 
 await bench.warmup(); // make results more reliable, ref: https://github.com/tinylibs/tinybench/pull/50
