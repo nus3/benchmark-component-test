@@ -6,7 +6,7 @@
     "fix": "biome check --apply .",
     "fix:unsafe": "biome check --apply-unsafe .",
     "lint": "biome lint .",
-    "benchmark": "tsx ./scripts/benchmark.ts",
+    "bench": "tsx ./scripts/benchmark.ts",
     "type-check": "tsc --noEmit"
   },
   "author": "nus3",
