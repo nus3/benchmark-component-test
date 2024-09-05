@@ -18,7 +18,6 @@ export const Default: Story = {
       lastName: "",
       email: "",
       birthDay: "",
-      phoneNumber: "",
       address: "",
       country: "",
       postalCode: "",

@@ -6,7 +6,6 @@ type FormSchema = {
   lastName: string;
   email: string;
   birthDay: string;
-  phoneNumber: string;
   address: string;
   postalCode: string;
   country: string;
@@ -39,9 +38,7 @@ export const Form: FC<FormProps> = ({ initialValues, onSubmit }) => {
   const handleSubmit = useCallback(
     (event: FormEvent) => {
       event.preventDefault();
-      if (values) {
-        onSubmit(values);
-      }
+      onSubmit(values);
     },
     [values, onSubmit],
   );
@@ -80,7 +77,7 @@ export const Form: FC<FormProps> = ({ initialValues, onSubmit }) => {
             className={styles.input}
             id="email"
             name="email"
-            type="email"
+            type="text"
             value={values?.email}
             onChange={handleChange}
           />
@@ -94,7 +91,7 @@ export const Form: FC<FormProps> = ({ initialValues, onSubmit }) => {
             className={styles.input}
             id="birthDay"
             name="birthDay"
-            type="date"
+            type="text"
             value={values?.birthDay}
             onChange={handleChange}
           />
@@ -144,7 +141,7 @@ export const Form: FC<FormProps> = ({ initialValues, onSubmit }) => {
             className={styles.input}
             id="password"
             name="password"
-            type="password"
+            type="text"
             value={values?.password}
             onChange={handleChange}
           />
@@ -155,7 +152,7 @@ export const Form: FC<FormProps> = ({ initialValues, onSubmit }) => {
             className={styles.input}
             id="confirmPassword"
             name="confirmPassword"
-            type="password"
+            type="text"
             value={values?.confirmPassword}
             onChange={handleChange}
           />
