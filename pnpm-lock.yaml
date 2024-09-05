@@ -14,9 +14,6 @@ importers:
       '@types/node':
         specifier: 22.5.1
         version: 22.5.1
-      tinybench:
-        specifier: 2.9.0
-        version: 2.9.0
       tsx:
         specifier: 4.19.0
         version: 4.19.0
