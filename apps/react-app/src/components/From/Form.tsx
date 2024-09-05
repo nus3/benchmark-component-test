@@ -5,9 +5,13 @@ type FormSchema = {
   firstName: string;
   lastName: string;
   email: string;
-  birthYear: string;
-  birthMonth: string;
   birthDay: string;
+  phoneNumber: string;
+  address: string;
+  postalCode: string;
+  country: string;
+  password: string;
+  confirmPassword: string;
 };
 
 type FormProps = {
@@ -85,35 +89,74 @@ export const Form: FC<FormProps> = ({ initialValues, onSubmit }) => {
 
       <div className={styles.row}>
         <div className={styles.field}>
-          <label htmlFor="birthYear">Birth Year:</label>
-          <input
-            className={styles.input}
-            id="birthYear"
-            name="birthYear"
-            type="text"
-            value={values?.birthYear}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.field}>
-          <label htmlFor="birthMonth">Birth Month:</label>
-          <input
-            className={styles.input}
-            id="birthMonth"
-            name="birthMonth"
-            type="text"
-            value={values?.birthMonth}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.field}>
           <label htmlFor="birthDay">Birth Day:</label>
           <input
             className={styles.input}
             id="birthDay"
             name="birthDay"
-            type="text"
+            type="date"
             value={values?.birthDay}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+
+      <div className={styles.row}>
+        <div className={styles.field}>
+          <label htmlFor="postalCode">Postal Code:</label>
+          <input
+            className={styles.input}
+            id="postalCode"
+            name="postalCode"
+            type="text"
+            value={values?.postalCode}
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="country">Country:</label>
+          <input
+            className={styles.input}
+            id="country"
+            name="country"
+            type="text"
+            value={values?.country}
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="address">Address:</label>
+          <input
+            className={styles.input}
+            id="address"
+            name="address"
+            type="text"
+            value={values?.address}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+
+      <div className={styles.row}>
+        <div className={styles.field}>
+          <label htmlFor="password">Password:</label>
+          <input
+            className={styles.input}
+            id="password"
+            name="password"
+            type="password"
+            value={values?.password}
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input
+            className={styles.input}
+            id="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            value={values?.confirmPassword}
             onChange={handleChange}
           />
         </div>
