@@ -10,6 +10,7 @@
     "test": "vitest",
     "test:jsdom": "vitest run --project jsdom",
     "test:playwright": "vitest run --project playwright",
+    "test:playwright-one-case": "vitest run --project playwright ./test/vitest/Form/Form.test.tsx",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

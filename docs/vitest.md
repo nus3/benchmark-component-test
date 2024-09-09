@@ -25,4 +25,9 @@ https://vitest.dev/guide/browser/
 - テストの種類、戦略に応じてvitestのworkspace機能が使える
   - https://vitest.dev/guide/workspace
   - `pnpm run test --project e2e`のように`--project`を指定することで、vitest.workspace.tsで定義したnameの環境のテストが実行できる
--
+- 複数のテストファイルを実行するとテストがパスしない
+  - 別プロセスもしくはワーカーで扱われていた
+
+## TODO
+
+Browser Mode時に複数のテストを並列で実行できる方法がないか確認する
