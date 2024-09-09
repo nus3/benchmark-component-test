@@ -26,7 +26,9 @@ describe("Form", () => {
     "入力された値がsubmit時に渡される: $index 回目",
     async ({ index }) => {
       const onSubmit = vi.fn();
-      render(<Form initialValues={initialValues} onSubmit={onSubmit} />);
+      const component = render(
+        <Form initialValues={initialValues} onSubmit={onSubmit} />,
+      );
 
       await userEvent.type(
         screen.getByRole("textbox", { name: "First Name:" }),
@@ -78,6 +80,8 @@ describe("Form", () => {
         password: `nus${index}-password`,
         confirmPassword: `nus${index}-confirmPassword`,
       });
+
+      component.unmount();
     },
   );
 });

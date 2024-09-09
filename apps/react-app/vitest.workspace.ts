@@ -19,7 +19,7 @@ export default defineWorkspace([
       include: ["./test/vitest/**/*.test.{ts,tsx}"],
       browser: {
         enabled: true,
-        headless: false,
+        headless: true,
         name: "chromium",
         provider: "playwright",
         // https://playwright.dev

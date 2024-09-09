@@ -14,8 +14,11 @@ const runScript = async (script: string, label: string) => {
 
 const main = async () => {
   const scripts = [
-    { script: "pnpm --filter react-app run test-ci", label: "vitest" },
-    { script: "pnpm --filter react-app run test-ci", label: "vitest2" },
+    { script: "pnpm --filter react-app run test:jsdom", label: "vitest-jsdom" },
+    {
+      script: "pnpm --filter react-app run test:playwright",
+      label: "vitest-playwright",
+    },
   ];
 
   const results = await Promise.all(
