@@ -37,7 +37,9 @@ export default defineWorkspace([
         headless: true,
         name: "chrome",
         provider: "webdriverio",
-        providerOptions: {},
+        providerOptions: {
+          // TODO: webdriverioでテストファイルごとにテストを並列で実行する方
+        },
       },
     },
   },

@@ -11,7 +11,9 @@
     "test:jsdom": "vitest run --project jsdom",
     "test:playwright": "vitest run --project playwright",
     "test:webdriverio": "vitest run --project webdriverio",
+    "test:storybook": "wait-on tcp:6006 && test-storybook",
     "storybook": "storybook dev -p 6006",
+    "storybook:start": "http-server storybook-static --port 6006 --silent",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "@storybook/react": "^8.2.9",
     "@storybook/react-vite": "^8.2.9",
     "@storybook/test": "^8.2.9",
+    "@storybook/test-runner": "0.19.1",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
     "@testing-library/user-event": "14.5.2",
@@ -36,12 +39,14 @@
     "@vitejs/plugin-react": "4.3.1",
     "@vitest/browser": "^2.0.5",
     "globals": "15.9.0",
+    "http-server": "14.1.1",
     "jsdom": "25.0.0",
     "playwright": "^1.47.0",
     "storybook": "^8.2.9",
     "typescript": "5.5.3",
     "vite": "5.4.1",
     "vitest": "2.0.5",
+    "wait-on": "8.0.1",
     "webdriverio": "9.0.9"
   }
 }

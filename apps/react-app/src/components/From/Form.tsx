@@ -13,7 +13,7 @@ type FormSchema = {
   confirmPassword: string;
 };
 
-type FormProps = {
+export type FormProps = {
   initialValues: FormSchema;
   onSubmit: (values: FormSchema) => void;
 };

@@ -19,10 +19,15 @@ const main = async () => {
       script: "pnpm --filter react-app run test:playwright",
       label: "vitest-playwright",
     },
+    // TODO: webdriverioでテストファイルごとにテストを並列で実行できたら計測対象に追加する
     // {
     //   script: "pnpm --filter react-app run test:webdriverio",
     //   label: "vitest-webdriverio",
     // },
+    {
+      script: "pnpm --filter react-app run test:storybook",
+      label: "storybook",
+    },
   ];
 
   const isParallel = process.argv.includes("--parallel");

@@ -36,3 +36,6 @@ Tests:       1 todo, 3502 passed, 3503 total
 - [次世代のブラウザテスト自動化プロトコルWeb Driver BiDi](https://zenn.dev/togami2864/articles/65af759b4a34f6)
 
 ## TODO
+
+- Vitestでwebdriverioを使っている場合にファイルごとにテストを並列で実行する方法
+- GitHub Actionsでbenchスクリプトを実行する
