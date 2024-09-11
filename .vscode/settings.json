@@ -6,6 +6,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "cSpell.words": [
-    "tinybench"
+    "tinybench",
+    "webdriverio"
   ]
 }

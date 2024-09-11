@@ -7,6 +7,7 @@
     "fix:unsafe": "biome check --apply-unsafe .",
     "lint": "biome lint .",
     "bench": "tsx ./scripts/benchmark.ts",
+    "bench:parallel": "tsx ./scripts/benchmark.ts --parallel",
     "type-check": "tsc --noEmit"
   },
   "author": "nus3",

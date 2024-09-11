@@ -27,3 +27,7 @@ https://vitest.dev/guide/browser/
   - `pnpm run test --project e2e`のように`--project`を指定することで、vitest.workspace.tsで定義したnameの環境のテストが実行できる
 - 複数のテストファイルを実行するとテストがパスしない
   - 別プロセスもしくはワーカーで扱われていた
+- webdriverioを使うと、ファイルごとに並列して実行してくれないかも？
+  - なんの設定もしないとファイルごとに並列では実行しなそう
+  - ここら辺の並列でテストを実行する方法が書かれてそう
+    - https://webdriver.io/docs/organizingsuites

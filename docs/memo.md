@@ -33,3 +33,6 @@ Tests:       1 todo, 3502 passed, 3503 total
 - [SeleniumとPlaywrightとCypressとWebdriver.ioのアーキテクチャーについて](https://zenn.dev/taku_nakagawa/articles/665048ada0ec58)
 - Vitestのドキュメントにjsdomと実際のブラウザ上でテストすることの違いの説明が記載されている
   - https://vitest.dev/guide/browser/#the-simulation-caveat
+- [次世代のブラウザテスト自動化プロトコルWeb Driver BiDi](https://zenn.dev/togami2864/articles/65af759b4a34f6)
+
+## TODO

@@ -19,12 +19,27 @@ const main = async () => {
       script: "pnpm --filter react-app run test:playwright",
       label: "vitest-playwright",
     },
+    // {
+    //   script: "pnpm --filter react-app run test:webdriverio",
+    //   label: "vitest-webdriverio",
+    // },
   ];
 
-  const results = await Promise.all(
-    scripts.map(({ script, label }) => runScript(script, label)),
-  );
-  console.table(results);
+  const isParallel = process.argv.includes("--parallel");
+
+  if (isParallel) {
+    const results = await Promise.all(
+      scripts.map(({ script, label }) => runScript(script, label)),
+    );
+    console.table(results);
+  } else {
+    const results = [];
+    for (const { script, label } of scripts) {
+      const result = await runScript(script, label);
+      results.push(result);
+    }
+    console.table(results);
+  }
 };
 
 main();

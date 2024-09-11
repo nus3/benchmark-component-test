@@ -27,4 +27,18 @@ export default defineWorkspace([
       },
     },
   },
+  {
+    extends: "vite.config.ts",
+    test: {
+      name: "webdriverio",
+      include: ["./test/vitest/**/*.test.{ts,tsx}"],
+      browser: {
+        enabled: true,
+        headless: true,
+        name: "chrome",
+        provider: "webdriverio",
+        providerOptions: {},
+      },
+    },
+  },
 ]);
