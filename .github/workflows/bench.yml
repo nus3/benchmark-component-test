@@ -1,7 +1,5 @@
 name: Benchmark Tests
 on:
-  pull_request:
-    branches: ["**"]
   workflow_dispatch:
 
 jobs:
