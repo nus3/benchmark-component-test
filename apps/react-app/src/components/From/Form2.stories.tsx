@@ -11,11 +11,6 @@ export default meta;
 // satisfiesだとうまく型補完されなかった、かなP
 type Story = StoryObj<typeof Form>;
 
-export const Default: Story = {
-  args,
-  tags: ["no-test"],
-};
-
 const TEST_COUNT = 50;
 
 const testStories: { [key: string]: Story } = {};

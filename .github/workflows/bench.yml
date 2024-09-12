@@ -1,0 +1,22 @@
+name: Benchmark Tests
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    # REF: https://pnpm.io/ja/continuous-integration#github-actions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: ./.github/actions/setup
+      - name: Install browser
+        run: pnpm --filter react-app exec playwright install
+
+      # REF: https://storybook.js.org/docs/writing-tests/test-runner#run-against-non-deployed-storybooks
+      - name: Build Storybook
+        run: pnpm --filter react-app run build-storybook --quiet
+      - name: Serve Storybook and Benchmark Tests
+        run: pnpm exec concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+          "pnpm --filter react-app run storybook:start" \
+          "pnpm run bench"

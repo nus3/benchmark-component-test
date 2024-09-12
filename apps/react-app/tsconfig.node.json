@@ -16,7 +16,9 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "types": ["@vitest/browser/providers/playwright", "@vitest/browser/providers/webdriverio"]
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "vitest.workspace.ts"]
 }
