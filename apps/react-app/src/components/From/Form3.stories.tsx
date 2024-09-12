@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Form, type FormProps } from "./Form";
-import { fn, within, userEvent, expect } from "@storybook/test";
-import { waitFor } from "@testing-library/react";
+import { Form } from "./Form";
+import { args, playSubmitForm } from "./storyHelpers";
 
 const meta: Meta = {
   component: Form,
@@ -12,153 +11,66 @@ export default meta;
 // satisfiesだとうまく型補完されなかった、かなP
 type Story = StoryObj<typeof Form>;
 
-const args: FormProps = {
-  initialValues: {
-    firstName: "",
-    lastName: "",
-    email: "",
-    birthDay: "",
-    address: "",
-    country: "",
-    postalCode: "",
-    password: "",
-    confirmPassword: "",
-  },
-  onSubmit: fn(),
-};
+const TEST_COUNT = 50;
 
-export const Default: Story = {
-  args,
-  tags: ["no-test"],
-};
+const testStories: { [key: string]: Story } = {};
+for (let i = 1; i <= TEST_COUNT; i++) {
+  testStories[`Test${i}`] = {
+    args,
+    play: async ({ args, canvasElement }) => {
+      await playSubmitForm(canvasElement, args, i);
+    },
+  };
+}
 
-const playSubmitForm = async (
-  canvasElement: HTMLElement,
-  args: FormProps,
-  index: number,
-) => {
-  const canvas = within(canvasElement);
-
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "First Name:" }),
-    `nus${index}-firstName`,
-  );
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "Last Name:" }),
-    `nus${index}-lastName`,
-  );
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "Email:" }),
-    `nus${index}-email`,
-  );
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "Birth Day:" }),
-    `nus${index}-birthDay`,
-  );
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "Postal Code:" }),
-    `nus${index}-postalCode`,
-  );
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "Country:" }),
-    `nus${index}-country`,
-  );
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "Address:" }),
-    `nus${index}-address`,
-  );
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "Password:" }),
-    `nus${index}-password`,
-  );
-  await userEvent.type(
-    canvas.getByRole("textbox", { name: "Confirm Password:" }),
-    `nus${index}-confirmPassword`,
-  );
-
-  await userEvent.click(canvas.getByRole("button", { name: "Submit" }));
-
-  await waitFor(() =>
-    expect(args.onSubmit).toHaveBeenCalledWith({
-      firstName: `nus${index}-firstName`,
-      lastName: `nus${index}-lastName`,
-      email: `nus${index}-email`,
-      birthDay: `nus${index}-birthDay`,
-      postalCode: `nus${index}-postalCode`,
-      country: `nus${index}-country`,
-      address: `nus${index}-address`,
-      password: `nus${index}-password`,
-      confirmPassword: `nus${index}-confirmPassword`,
-    }),
-  );
-};
-
-export const Test1: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 1);
-  },
-};
-
-export const Test2: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 2);
-  },
-};
-
-export const Test3: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 3);
-  },
-};
-
-export const Test4: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 4);
-  },
-};
-
-export const Test5: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 5);
-  },
-};
-
-export const Test6: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 6);
-  },
-};
-
-export const Test7: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 7);
-  },
-};
-
-export const Test8: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 8);
-  },
-};
-
-export const Test9: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 9);
-  },
-};
-
-export const Test10: Story = {
-  args,
-  play: async ({ args, canvasElement }) => {
-    await playSubmitForm(canvasElement, args, 10);
-  },
-};
+// 以下のような方式でテストケースを50個exportする
+export const Test1 = testStories.Test1;
+export const Test2 = testStories.Test2;
+export const Test3 = testStories.Test3;
+export const Test4 = testStories.Test4;
+export const Test5 = testStories.Test5;
+export const Test6 = testStories.Test6;
+export const Test7 = testStories.Test7;
+export const Test8 = testStories.Test8;
+export const Test9 = testStories.Test9;
+export const Test10 = testStories.Test10;
+export const Test11 = testStories.Test11;
+export const Test12 = testStories.Test12;
+export const Test13 = testStories.Test13;
+export const Test14 = testStories.Test14;
+export const Test15 = testStories.Test15;
+export const Test16 = testStories.Test16;
+export const Test17 = testStories.Test17;
+export const Test18 = testStories.Test18;
+export const Test19 = testStories.Test19;
+export const Test20 = testStories.Test20;
+export const Test21 = testStories.Test21;
+export const Test22 = testStories.Test22;
+export const Test23 = testStories.Test23;
+export const Test24 = testStories.Test24;
+export const Test25 = testStories.Test25;
+export const Test26 = testStories.Test26;
+export const Test27 = testStories.Test27;
+export const Test28 = testStories.Test28;
+export const Test29 = testStories.Test29;
+export const Test30 = testStories.Test30;
+export const Test31 = testStories.Test31;
+export const Test32 = testStories.Test32;
+export const Test33 = testStories.Test33;
+export const Test34 = testStories.Test34;
+export const Test35 = testStories.Test35;
+export const Test36 = testStories.Test36;
+export const Test37 = testStories.Test37;
+export const Test38 = testStories.Test38;
+export const Test39 = testStories.Test39;
+export const Test40 = testStories.Test40;
+export const Test41 = testStories.Test41;
+export const Test42 = testStories.Test42;
+export const Test43 = testStories.Test43;
+export const Test44 = testStories.Test44;
+export const Test45 = testStories.Test45;
+export const Test46 = testStories.Test46;
+export const Test47 = testStories.Test47;
+export const Test48 = testStories.Test48;
+export const Test49 = testStories.Test49;
+export const Test50 = testStories.Test50;

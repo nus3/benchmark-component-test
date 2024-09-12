@@ -24,10 +24,11 @@ const main = async () => {
     //   script: "pnpm --filter react-app run test:webdriverio",
     //   label: "vitest-webdriverio",
     // },
-    {
-      script: "pnpm --filter react-app run test:storybook",
-      label: "storybook",
-    },
+    // TODO: storybookをビルドして、サーバー起動するのが前段階で必要
+    // {
+    //   script: "pnpm --filter react-app run test:storybook",
+    //   label: "storybook",
+    // },
   ];
 
   const isParallel = process.argv.includes("--parallel");
