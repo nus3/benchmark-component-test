@@ -16,6 +16,8 @@
   - https://storybook.js.org/blog/portable-stories-for-playwright-ct/
 - netflix の safe test
   - https://netflixtechblog.com/introducing-safetest-a-novel-approach-to-front-end-testing-37f9f88c152d
+- webdriverioのcomponent test
+  - https://webdriver.io/docs/component-testing
 
 ## テストケース数
 

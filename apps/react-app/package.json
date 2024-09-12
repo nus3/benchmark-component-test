@@ -11,7 +11,7 @@
     "test:jsdom": "vitest run --project jsdom",
     "test:playwright": "vitest run --project playwright",
     "test:webdriverio": "vitest run --project webdriverio",
-    "test:storybook": "wait-on tcp:6006 && test-storybook",
+    "test:storybook": "wait-on tcp:127.0.0.1:6006 && test-storybook",
     "storybook": "storybook dev -p 6006",
     "storybook:start": "http-server storybook-static --port 6006 --silent",
     "build-storybook": "storybook build"
