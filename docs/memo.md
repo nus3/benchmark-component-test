@@ -41,3 +41,4 @@ Tests:       1 todo, 3502 passed, 3503 total
 
 - Vitestでwebdriverioを使っている場合にファイルごとにテストを並列で実行する方法
 - GitHub Actionsでbenchスクリプトを実行する
+- playwrightのcomponent testでなぜコンポーネントが描画されないか調べる
