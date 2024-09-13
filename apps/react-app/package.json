@@ -12,6 +12,7 @@
     "test:playwright": "vitest run --project playwright",
     "test:webdriverio": "vitest run --project webdriverio",
     "test:storybook": "wait-on tcp:127.0.0.1:6006 && test-storybook",
+    "test:cypress": "cypress run --browser chrome --component --headless",
     "storybook": "storybook dev -p 6006",
     "storybook:start": "http-server storybook-static --port 6006 --silent",
     "build-storybook": "storybook build"
@@ -38,6 +39,7 @@
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.3.1",
     "@vitest/browser": "^2.0.5",
+    "cypress": "13.14.2",
     "globals": "15.9.0",
     "http-server": "14.1.1",
     "jsdom": "25.0.0",
