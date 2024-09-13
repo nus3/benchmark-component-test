@@ -27,10 +27,11 @@ const main = async () => {
       script: "pnpm --filter react-app run test:storybook",
       label: "storybook",
     },
-    {
-      script: "pnpm --filter react-app run test:cypress",
-      label: "cypress",
-    },
+    // TODO: 50ケース、5ファイルを実行すると'670.20s'かかった。テストケースを全体的に減らすか検討中
+    // {
+    //   script: "pnpm --filter react-app run test:cypress",
+    //   label: "cypress",
+    // },
   ];
 
   const isParallel = process.argv.includes("--parallel");

@@ -42,3 +42,19 @@ Tests:       1 todo, 3502 passed, 3503 total
 - Vitestでwebdriverioを使っている場合にファイルごとにテストを並列で実行する方法
 - GitHub Actionsでbenchスクリプトを実行する
 - playwrightのcomponent testでなぜコンポーネントが描画されないか調べる
+
+## memo
+
+```
+[TEST] ┌─────────┬──────────────────────┬───────────┐
+[TEST] │ (index) │ name                 │ duration  │
+[TEST] ├─────────┼──────────────────────┼───────────┤
+[TEST] │ 0       │ 'vitest-jsdom'       │ '46.36s'  │
+[TEST] │ 1       │ 'vitest-playwright'  │ '83.55s'  │
+[TEST] │ 2       │ 'vitest-webdriverio' │ '197.90s' │
+[TEST] │ 3       │ 'storybook'          │ '81.90s'  │
+[TEST] │ 4       │ 'cypress'            │ '670.20s' │
+[TEST] └─────────┴──────────────────────┴───────────┘
+```
+
+cypressが50ケース、5ファイルを実行するととても遅い

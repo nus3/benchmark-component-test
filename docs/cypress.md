@@ -28,7 +28,17 @@ https://docs.cypress.io/guides/component-testing/overview
 - Cypressのcomponent testを実行する場合は`--component`をつける
   - https://docs.cypress.io/guides/guides/command-line#Options
 - `describe`と`it`はサポートしてるが`test`は実装されてなそう
--
+- Cypressのテストを並列で実行する仕組み
+  - https://docs.cypress.io/guides/cloud/smart-orchestration/parallelization
+  - `--parallel`で並列に実行してくれそう？
+  - `These flags can only be used when recording to Cypress Cloud.`
+  - Cypress Cloudを使わないといけなそう
+- Cypress Cloud
+  - https://docs.cypress.io/guides/cloud/introduction
+  - Cypressが提供しているエンタープライズ版のサービス
+  - テストの並列化以外にテストに関連する便利な機能を提供している
+  - 値段
+    - https://www.cypress.io/pricing
 
 ## TODO
 
