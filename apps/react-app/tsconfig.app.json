@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "types": ["cypress"]
+    "types": ["cypress", "@testing-library/cypress"]
   },
   "include": ["src", "test", "test/vitest/setup.ts", "test/cypress", "cypress"]
 }

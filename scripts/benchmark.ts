@@ -27,6 +27,10 @@ const main = async () => {
       script: "pnpm --filter react-app run test:storybook",
       label: "storybook",
     },
+    {
+      script: "pnpm --filter react-app run test:cypress",
+      label: "cypress",
+    },
   ];
 
   const isParallel = process.argv.includes("--parallel");

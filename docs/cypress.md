@@ -27,6 +27,8 @@ https://docs.cypress.io/guides/component-testing/overview
   - https://docs.cypress.io/guides/guides/command-line#Using-scripts
 - Cypressのcomponent testを実行する場合は`--component`をつける
   - https://docs.cypress.io/guides/guides/command-line#Options
+- `describe`と`it`はサポートしてるが`test`は実装されてなそう
+-
 
 ## TODO
 
