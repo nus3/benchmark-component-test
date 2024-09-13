@@ -1,7 +1,7 @@
 import { describe, expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Form } from "../../../src/components/From/Form";
+import { Form } from "../../../src/components/Form/Form";
 
 const initialValues = {
   firstName: "",
