@@ -1,23 +1,11 @@
 ## 検証したいもの
 
-- vitest, testing-library
-- jest, testing-library
-- vitest, browser mode
-  - https://vitest.dev/guide/browser/#browser-mode
 - playwright components test
   - https://playwright.dev/docs/test-components
-- cypress components test
-  - https://docs.cypress.io/guides/component-testing/overview
-- storybook test runner
-  - https://storybook.js.org/docs/writing-tests/test-runner
-  - 中身は playwright
-  - https://storybook.js.org/blog/visual-testing-is-the-greatest-trick-in-ui-development/
 - Storybook portable test
   - https://storybook.js.org/blog/portable-stories-for-playwright-ct/
 - netflix の safe test
   - https://netflixtechblog.com/introducing-safetest-a-novel-approach-to-front-end-testing-37f9f88c152d
-- webdriverioのcomponent test
-  - https://webdriver.io/docs/component-testing
 
 ## テストケース数
 
@@ -40,7 +28,6 @@ Tests:       1 todo, 3502 passed, 3503 total
 ## TODO
 
 - Vitestでwebdriverioを使っている場合にファイルごとにテストを並列で実行する方法
-- GitHub Actionsでbenchスクリプトを実行する
 - playwrightのcomponent testでなぜコンポーネントが描画されないか調べる
 - webdriverioのコンポーネントテストが動かない理由を調べるところから
 
@@ -64,3 +51,6 @@ Tests:       1 todo, 3502 passed, 3503 total
 ```
 
 cypressが50ケース、5ファイルを実行するととても遅い
+
+ローカルでwebdriverioのcomponent testを実行した時の結果。
+`Spec Files:      5 passed, 5 total (100% completed) in 00:00:48`

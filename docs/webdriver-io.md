@@ -13,11 +13,13 @@ https://webdriver.io/docs/component-testing/
 - `pnpm create wdio@latest`でセットアップ
 - 実行してみたらmochaがないからって怒られた
   - 2024-09-13T10:22:22.327Z ERROR @wdio/browser-runner:plugin: Failed to render template: Cannot find package 'mocha' imported from /Users/nus3/dev/playground/benchmark-component-test/apps/react-app/node_modules
+  - monorepoの場合、monorepoで管理しているパッケージ配下のnode_modulesにmochaが必要そう
+  - ということで`pnpm add --save-dev --save-exact mocha@10.7.3`をmonorepo配下のパッケージに追加
+  - monorepo配下でやろうと思うと、エラーが出ちゃう...
+    - ` expect.js: Uncaught SyntaxError: The requested module ... does not provide an export named 'expect'`
+  - rootで作った場合、5ファイルでそれぞれ50ケース実行すると実行時間は以下だった
+    - `Spec Files: 5 passed, 5 total (100% completed) in 00:00:48`
 - webdriverio用のtesting-libraryがある
-
   - https://testing-library.com/docs/webdriverio-testing-library/intro/
-
-- @wdio/browser-runner@latest
-- @wdio/mocha-framework@latest
-- @vitejs/plugin-react
-- @wdio/spec-reporter@latest
+- examplesのものは動いたので、これを持ってくる
+  - https://github.com/webdriverio/component-testing-examples
