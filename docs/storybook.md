@@ -4,6 +4,18 @@
 
 https://storybook.js.org/docs/writing-tests/component-testing#assert-tests-with-vitests-apis
 
+## Portable stories in Playwright CT
+
+https://storybook.js.org/blog/portable-stories-for-playwright
+https://storybook.js.org/docs/api/portable-stories/portable-stories-playwright
+
+- 現状はVitest、Jest（これはおそらくcomposeStory）
+- Playwright CT
+- 今後、Cypressなどにも対応予定？
+- まずはPlaywright CTの設定を入れる
+  - https://playwright.dev/docs/test-components
+  -
+
 ## memo
 
 - Storybookのtest-runnerはjestを使ってる？

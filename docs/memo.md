@@ -1,9 +1,5 @@
 ## 検証したいもの
 
-- playwright components test
-  - https://playwright.dev/docs/test-components
-- Storybook portable test
-  - https://storybook.js.org/blog/portable-stories-for-playwright-ct/
 - netflix の safe test
   - https://netflixtechblog.com/introducing-safetest-a-novel-approach-to-front-end-testing-37f9f88c152d
 
@@ -28,8 +24,7 @@ Tests:       1 todo, 3502 passed, 3503 total
 ## TODO
 
 - Vitestでwebdriverioを使っている場合にファイルごとにテストを並列で実行する方法
-- playwrightのcomponent testでなぜコンポーネントが描画されないか調べる
-- webdriverioのコンポーネントテストが動かない理由を調べるところから
+- netflix の safe test
 
 ```
 [0-0]  Error:  Test failed due to following error(s):
