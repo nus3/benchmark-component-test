@@ -42,6 +42,12 @@ Tests:       1 todo, 3502 passed, 3503 total
 - Vitestでwebdriverioを使っている場合にファイルごとにテストを並列で実行する方法
 - GitHub Actionsでbenchスクリプトを実行する
 - playwrightのcomponent testでなぜコンポーネントが描画されないか調べる
+- webdriverioのコンポーネントテストが動かない理由を調べるところから
+
+```
+[0-0]  Error:  Test failed due to following error(s):
+  - Form.test.tsx: Cannot find package 'mocha' imported from /Users/nus3/dev/playground/benchmark-component-test/apps/react-app/node_modules
+```
 
 ## memo
 

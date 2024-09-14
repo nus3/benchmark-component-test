@@ -10,3 +10,14 @@ https://webdriver.io/docs/component-testing/
 - NuxtとTailwindCSSのサポートがある
 - React, TypeScript, Viteのサンプルリポジトリ
   - https://github.com/webdriverio/component-testing-examples/tree/main/react-typescript-vite
+- `pnpm create wdio@latest`でセットアップ
+- 実行してみたらmochaがないからって怒られた
+  - 2024-09-13T10:22:22.327Z ERROR @wdio/browser-runner:plugin: Failed to render template: Cannot find package 'mocha' imported from /Users/nus3/dev/playground/benchmark-component-test/apps/react-app/node_modules
+- webdriverio用のtesting-libraryがある
+
+  - https://testing-library.com/docs/webdriverio-testing-library/intro/
+
+- @wdio/browser-runner@latest
+- @wdio/mocha-framework@latest
+- @vitejs/plugin-react
+- @wdio/spec-reporter@latest
