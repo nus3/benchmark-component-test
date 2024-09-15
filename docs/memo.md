@@ -1,8 +1,3 @@
-## 検証したいもの
-
-- netflix の safe test
-  - https://netflixtechblog.com/introducing-safetest-a-novel-approach-to-front-end-testing-37f9f88c152d
-
 ## テストケース数
 
 現状
