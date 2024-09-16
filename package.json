@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "vite:start": "http-server dist --port 3000 --silent",
     "preview": "vite preview",
     "fix": "biome check --apply .",
     "fix:unsafe": "biome check --apply-unsafe .",
@@ -14,7 +15,7 @@
     "type-check": "tsc --noEmit",
     "test:vitest-jsdom": "vitest run --project jsdom",
     "test:vitest-playwright": "vitest run --project playwright",
-    "test:vitest-webdriverio": "vitest run --project webdriverio",
+    "test:vitest-wdio": "vitest run --project webdriverio",
     "test:storybook": "wait-on tcp:127.0.0.1:6006 && test-storybook",
     "test:cypress": "cypress run --component --headless --browser chrome",
     "test:wdio": "wdio run ./wdio.conf.ts",
@@ -70,5 +71,6 @@
   "dependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1"
-  }
+  },
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }
