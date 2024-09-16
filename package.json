@@ -12,7 +12,8 @@
     "bench": "tsx ./scripts/benchmark.ts",
     "bench:parallel": "tsx ./scripts/benchmark.ts --parallel",
     "type-check": "tsc --noEmit",
-    "test:vitest-jsdom": "vitest run --project jsdom"
+    "test:vitest-jsdom": "vitest run --project jsdom",
+    "test:vitest-playwright": "vitest run --project playwright"
   },
   "author": "nus3",
   "license": "ISC",
@@ -29,6 +30,7 @@
     "@vitest/browser": "2.1.1",
     "concurrently": "9.0.1",
     "jsdom": "25.0.0",
+    "playwright": "1.47.1",
     "tsx": "4.19.0",
     "typescript": "5.5.4",
     "vite": "5.4.5",
