@@ -47,8 +47,10 @@ https://github.com/kolodny/safetest
 "vitest": "^0.34.3"
 ```
 
+- npmでやると、最新のバージョンでも起動した
+- `TypeError: test.each is not a function`
+  - test.eachは使えなそう...
 - pnpmだとエラー出るかも？
-
-## TODO
-
-- SafeTestのexamplesが動くかどうか試してみる
+- npmでmonorepoじゃなかったら、うまく動いた
+- `8.92s (transform 113ms, setup 1.38s, collect 472ms, tests 41.94s, environment 0ms, prepare 264ms)`
+  - ローカルだけど、めちゃめちゃ早い

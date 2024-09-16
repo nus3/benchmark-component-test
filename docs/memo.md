@@ -1,3 +1,9 @@
+## TODO
+
+- monorepoやめて、単一でかつnpmで動くかやってみる
+- monorepoでpnpmではなく、npmで動くかやってみる
+- Vitestでwebdriverioを使っている場合にファイルごとにテストを並列で実行する方法
+
 ## テストケース数
 
 現状
@@ -15,16 +21,6 @@ Tests:       1 todo, 3502 passed, 3503 total
 - Vitestのドキュメントにjsdomと実際のブラウザ上でテストすることの違いの説明が記載されている
   - https://vitest.dev/guide/browser/#the-simulation-caveat
 - [次世代のブラウザテスト自動化プロトコルWeb Driver BiDi](https://zenn.dev/togami2864/articles/65af759b4a34f6)
-
-## TODO
-
-- Vitestでwebdriverioを使っている場合にファイルごとにテストを並列で実行する方法
-- netflix の safe test
-
-```
-[0-0]  Error:  Test failed due to following error(s):
-  - Form.test.tsx: Cannot find package 'mocha' imported from /Users/nus3/dev/playground/benchmark-component-test/apps/react-app/node_modules
-```
 
 ## memo
 
