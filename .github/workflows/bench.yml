@@ -8,15 +8,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: ./.github/actions/setup
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      - name: Install dependencies
+        run: npm ci
       - name: Install browser
-        run: pnpm --filter react-app exec playwright install
+        run: npx playwright install
 
       # REF: https://storybook.js.org/docs/writing-tests/test-runner#run-against-non-deployed-storybooks
       - name: Build Storybook
-        run: pnpm --filter react-app run build-storybook --quiet
-      - name: Serve Storybook and Benchmark Tests
-        run: pnpm exec concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-          "pnpm --filter react-app run storybook:start" \
-          "pnpm run bench"
+        run: npm run build-storybook --quiet
+      - name: Serve Storybook, Vite and Benchmark Tests
+        run:
+          npx concurrently -k -s first -n "SB,VITE,TEST" -c "magenta,cyan,blue" \
+          "npm run storybook:start" \
+          "npm run dev" \
+          "npm run bench"

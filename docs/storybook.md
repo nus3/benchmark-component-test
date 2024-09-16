@@ -27,3 +27,4 @@ https://storybook.js.org/docs/api/portable-stories/portable-stories-playwright
 - tagsを使ってstoryごとにテスト対象かどうかの設定ができそう
   - https://storybook.js.org/docs/writing-tests/test-runner#experimental-filter-tests
   - https://storybook.js.org/docs/writing-docs/autodocs#set-up-automated-documentation
+- storybook関連のパッケージのバージョンはキャレットつけといた方が良さそう

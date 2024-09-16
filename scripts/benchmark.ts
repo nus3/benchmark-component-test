@@ -6,7 +6,19 @@ const execAsync = promisify(exec);
 
 const runScript = async (script: string, label: string) => {
   const start = performance.now();
-  await execAsync(script);
+
+  try {
+    const { stdout, stderr } = await execAsync(script);
+    if (stdout) {
+      console.log(`(${label}):\n${stdout}`);
+    }
+    if (stderr) {
+      console.error(`[Error](${label}):\n${stderr}`);
+    }
+  } catch (error) {
+    console.error(`[Error](${label}):\n${error.message}`);
+  }
+
   const end = performance.now();
   const duration = (end - start) / 1000;
   return { name: label, duration: `${duration.toFixed(2)}s` };
@@ -14,22 +26,18 @@ const runScript = async (script: string, label: string) => {
 
 const main = async () => {
   const scripts = [
-    { script: "pnpm --filter react-app run test:jsdom", label: "vitest-jsdom" },
-    {
-      script: "pnpm --filter react-app run test:playwright",
-      label: "vitest-playwright",
-    },
-    {
-      script: "pnpm --filter react-app run test:webdriverio",
-      label: "vitest-webdriverio",
-    },
-    {
-      script: "pnpm --filter react-app run test:storybook",
-      label: "storybook",
-    },
-    // TODO: 50ケース、5ファイルを実行すると'670.20s'かかった。テストケースを全体的に減らすか検討中
+    { script: "npm run test:vitest-jsdom", label: "vitest-jsdom" },
+    { script: "npm run test:vitest-playwright", label: "vitest-playwright" },
+    // TODO: ファイルごとに並列化したい
+    { script: "npm run test:vitest-wdio", label: "vitest-wdio" },
+
+    { script: "npm run test:storybook", label: "storybook" },
+    { script: "npm run test:wdio", label: "wdio" },
+    { script: "npm run test:safetest", label: "safetest" },
+
+    // Cypress Cloudじゃないとテストファイルごとにテストを実行できなさそうなのでCypressは計測対象から外す
     // {
-    //   script: "pnpm --filter react-app run test:cypress",
+    //   script: "npm run test:cypress",
     //   label: "cypress",
     // },
   ];
@@ -42,7 +50,7 @@ const main = async () => {
     );
     console.table(results);
   } else {
-    const results = [];
+    const results: { name: string; duration: string }[] = [];
     for (const { script, label } of scripts) {
       const result = await runScript(script, label);
       results.push(result);
