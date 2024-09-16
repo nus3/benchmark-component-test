@@ -17,6 +17,7 @@
     "test:vitest-webdriverio": "vitest run --project webdriverio",
     "test:storybook": "wait-on tcp:127.0.0.1:6006 && test-storybook",
     "test:cypress": "cypress run --component --headless --browser chrome",
+    "test:wdio": "wdio run ./wdio.conf.ts",
     "storybook": "storybook dev -p 6006",
     "storybook:start": "http-server storybook-static --port 6006 --silent",
     "build-storybook": "storybook build"
@@ -45,6 +46,9 @@
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.3.1",
     "@vitest/browser": "2.1.1",
+    "@wdio/browser-runner": "^9.0.9",
+    "@wdio/cli": "^9.0.9",
+    "@wdio/mocha-framework": "^9.0.8",
     "concurrently": "9.0.1",
     "cypress": "13.14.2",
     "http-server": "14.1.1",
