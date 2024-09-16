@@ -42,4 +42,17 @@ export default defineWorkspace([
       },
     },
   },
+  {
+    extends: "vite.config.ts",
+    server: {
+      port: 3000,
+    },
+    test: {
+      name: "safetest",
+      globals: true,
+      include: ["./src/test/safetest/**/*.safetest.?(c|m)[jt]s?(x)"],
+      testTimeout: 30000,
+      setupFiles: ["./src/test/safetest/setup-safetest.tsx"],
+    },
+  },
 ]);
