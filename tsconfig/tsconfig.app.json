@@ -20,6 +20,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    "types": ["cypress", "@testing-library/cypress"]
   },
-  "include": ["../src/**/*"]
+  // cypressで定義されたカスタムコマンドの方を読み込む
+  "include": ["../src/**/*", "../cypress/**/*"]
 }

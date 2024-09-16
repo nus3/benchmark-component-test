@@ -16,6 +16,7 @@
     "test:vitest-playwright": "vitest run --project playwright",
     "test:vitest-webdriverio": "vitest run --project webdriverio",
     "test:storybook": "wait-on tcp:127.0.0.1:6006 && test-storybook",
+    "test:cypress": "cypress run --component --headless --browser chrome",
     "storybook": "storybook dev -p 6006",
     "storybook:start": "http-server storybook-static --port 6006 --silent",
     "build-storybook": "storybook build"
@@ -35,6 +36,7 @@
     "@storybook/react-vite": "^8.2.9",
     "@storybook/test": "^8.2.9",
     "@storybook/test-runner": "0.19.1",
+    "@testing-library/cypress": "10.0.2",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
     "@testing-library/user-event": "14.5.2",
@@ -44,6 +46,7 @@
     "@vitejs/plugin-react": "4.3.1",
     "@vitest/browser": "2.1.1",
     "concurrently": "9.0.1",
+    "cypress": "13.14.2",
     "http-server": "14.1.1",
     "jsdom": "25.0.0",
     "playwright": "1.47.1",
