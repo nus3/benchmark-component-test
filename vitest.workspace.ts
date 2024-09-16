@@ -6,16 +6,16 @@ export default defineWorkspace([
     test: {
       name: "jsdom",
       environment: "jsdom",
-      setupFiles: "./src/test/jsdom/setup.ts",
+      setupFiles: "./src/test/vitest/setup.ts",
       css: true,
-      include: ["./src/test/jsdom/**/*.test.{ts,tsx}"],
+      include: ["./src/test/vitest/**/*.test.{ts,tsx}"],
     },
   },
   {
     extends: "vite.config.ts",
     test: {
       name: "playwright",
-      include: ["./src/test/jsdom/**/*.test.{ts,tsx}"],
+      include: ["./src/test/vitest/**/*.test.{ts,tsx}"],
       browser: {
         enabled: true,
         headless: true,
@@ -23,6 +23,22 @@ export default defineWorkspace([
         provider: "playwright",
         // https://playwright.dev
         providerOptions: {},
+      },
+    },
+  },
+  {
+    extends: "vite.config.ts",
+    test: {
+      name: "webdriverio",
+      include: ["./src/test/vitest/**/*.test.{ts,tsx}"],
+      browser: {
+        enabled: true,
+        headless: true,
+        name: "chrome",
+        provider: "webdriverio",
+        providerOptions: {
+          // TODO: webdriverioでテストファイルごとにテストを並列で実行する方
+        },
       },
     },
   },
