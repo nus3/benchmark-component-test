@@ -42,7 +42,7 @@ const main = async () => {
     );
     console.table(results);
   } else {
-    const results = [];
+    const results: { name: string; duration: string }[] = [];
     for (const { script, label } of scripts) {
       const result = await runScript(script, label);
       results.push(result);
