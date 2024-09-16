@@ -23,3 +23,6 @@ dist-ssr
 
 # browser test
 __screenshots__
+
+*storybook.log
+storybook-static
